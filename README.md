@@ -46,3 +46,7 @@ puts calendar.find_conflicted_time_windows
  Run test cases
  
  $ bundle exec rspec
+
+## Result
+
+[![video](result.gif)](result.gif)
