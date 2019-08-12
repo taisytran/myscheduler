@@ -13,4 +13,6 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.before(:each) { Event.class_variable_set :@@all, [] }
 end

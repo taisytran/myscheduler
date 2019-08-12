@@ -16,6 +16,7 @@ RSpec.describe Myscheduler do
       timelapse = events.map(&:begin_time) + events.map(&:end_time)
       timelapse.sort!
 
+      @scheduled_events = [] # refresh if schedule method used many times
       timelapse.each_cons(2) do |begin_time, next_time|
         # get all events in the period (begin_time to next_time)
         ev_period = proc { |ev| ev.period?(begin_time, next_time) }
