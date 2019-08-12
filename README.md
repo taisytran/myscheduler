@@ -35,7 +35,14 @@ puts calendar.find_conflicted_time_windows
 ## Installation
 
  $ bundle install
+ 
+ $ chmod +x bin/run
 
 ## Usage
+ Run example
 
+ $ bin/run
+ 
+ Run test cases
+ 
  $ bundle exec rspec

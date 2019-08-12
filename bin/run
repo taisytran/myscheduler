@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'time'
+require 'myscheduler'
+
+calendar = Myscheduler::Calendar.new
+
+calendar.schedule(Myscheduler::Event.new(4,
+                                         Time.parse('2019-01-02 10:00'),
+                                         Time.parse('2019-01-02 11:00')))
+calendar.schedule(Myscheduler::Event.new(5,
+                                         Time.parse('2019-01-02 09:30'),
+                                         Time.parse('2019-01-02 11:30')))
+calendar.schedule(Myscheduler::Event.new(6,
+                                         Time.parse('2019-01-02 08:30'),
+                                         Time.parse('2019-01-02 12:30')))
+
+puts calendar.find_conflicted_time_windows
